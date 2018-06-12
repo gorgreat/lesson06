@@ -99,15 +99,16 @@ chooseItem.addEventListener('keyup', () => {
 });
 
 //событие открыт магазин или нет
-timeValue.addEventListener('change', () => {
+timeValue.addEventListener('keyup', () => {
   let time = timeValue.value;
+  
   if (time < 0) {
     mainList.open = false;
-      } else if (time > 8 && time < 20) {
-        mainList.open = true;
-          } else  (time < 24) {
-            mainList.open = false;
-  }; 
+  } else if (time > 8 && time < 20) {
+    mainList.open = true;
+  } else {
+    mainList.open = false;
+  }
 
   if (mainList.open == true) {
     isopenDiv.textContent = 'Магазин работает';
